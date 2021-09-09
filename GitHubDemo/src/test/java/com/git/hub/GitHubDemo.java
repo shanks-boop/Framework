@@ -34,22 +34,19 @@ public class GitHubDemo {
 		
 		List<WebElement> elementName = driver.findElements(By.xpath("//a[@data-testid='itemDescription']"));
 		
-		System.out.println(elementName.size());
+		System.out.println(elementName.size()); //print the size of elements found .. .should be 60
 		
 		int i = 1;
 		
-		//check all the 60 links if they contain the word Table.  There should be a number 60 in the console for the LAST line
+		//check all the 60 links if they contain the word Table and for each link print pass or fail.
 		for (WebElement webElement : elementName) {
-            String name = webElement.getText();
-            //System.out.println(name);
+                String name = webElement.getText();
             
-            if (name.contains("Table"))
-              System.out.println("The list contains Table .. whoohooo" + " " + i);
-          else
-              System.out.println("UH OH");
-            
-            i++;
-            
+               if (name.contains("Table"))
+                 System.out.println("The list contains Table .. whoohooo" + " " + i);
+               else
+                 System.out.println("UH OH");
+               i++;      
         }
 		
 		Thread.sleep(4000);  //ideally should use a proper wait command
