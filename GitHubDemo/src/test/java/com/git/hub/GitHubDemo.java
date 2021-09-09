@@ -52,7 +52,7 @@ public class GitHubDemo {
             
         }
 		
-		Thread.sleep(4000);  
+		Thread.sleep(4000);  //ideally should use a proper wait command
 		
 		WebElement element = driver.findElement(By.xpath("(//a[@data-testid='itemDescription'])[60]"));
 		
@@ -61,7 +61,7 @@ public class GitHubDemo {
 		driver.findElement(By.xpath("(//a[@data-testid='itemDescription'])[60]")).click(); //click on the last item in the list
 		
 		
-		Thread.sleep(4000); 
+		Thread.sleep(4000);   //ideally should use a proper wait command
 		
 		driver.findElement(By.id("buyButton")).click(); //click on buy button to add item to cart
 		
@@ -69,7 +69,7 @@ public class GitHubDemo {
 		
 		driver.findElement(By.xpath("//a[@data-testid='cart-nav-link']")).click(); //click on cart to see items
 		
-		Thread.sleep(4000);
+		Thread.sleep(4000);   //ideally should use a proper wait command
 		
 		driver.findElement(By.cssSelector("svg.itemDelete__icon")).click(); //click to empty cart
 		
