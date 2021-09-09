@@ -32,7 +32,7 @@ public class GitHubDemo {
 		
 		Thread.sleep(4000); //ideally should use a proper wait command .. like wait for for element to be visible or clickable (using a short cut due to time constraints .. sorry!)
 		
-		List<WebElement> elementName = driver.findElements(By.xpath("//a[@data-testid='itemDescription']"));
+		List<WebElement> elementName = driver.findElements(By.xpath("//a[@data-testid='itemDescription']")); //store all the 60 elements for table description in a LIST
 		
 		System.out.println(elementName.size()); //print the size of elements found .. .should be 60
 		
