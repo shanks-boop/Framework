@@ -20,55 +20,61 @@ public class GitHubDemo {
 		
 		
 		System.setProperty("webdriver.chrome.driver",
-	            "C:\\Users\\af\\Videos\\Webdrivers\\chromedriver.exe");
+	            "C:\\Users\\af\\Videos\\Webdrivers\\chromedriver.exe"); //set the path to where the chrome driver is located
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(); //initialize chrome driver
 		
-		driver.manage().window().maximize();
-		
-		driver.get("https://www.webstaurantstore.com/"); //navigate to web store
-		
-		driver.findElement(By.id("searchval")).sendKeys("stainless work table" + Keys.ENTER); //search for item
-		
-		Thread.sleep(4000); //ideally should use a proper wait command .. like wait for for element to be visible or clickable (using a short cut due to time constraints .. sorry!)
-		
-		List<WebElement> elementName = driver.findElements(By.xpath("//a[@data-testid='itemDescription']")); //store all the 60 elements for table description in a LIST
-		
-		System.out.println(elementName.size()); //print the size of elements found .. .should be 60
-		
-		int i = 1;
-		
-		//check all the 60 links if they contain the word Table and for each link print pass or fail.
-		for (WebElement webElement : elementName) {
-                String name = webElement.getText();
-            
-               if (name.contains("Table"))
-                 System.out.println("The list contains Table .. whoohooo" + " " + i);
-               else
-                 System.out.println("UH OH");
-               i++;      
-        }
-		
-		Thread.sleep(4000);  //ideally should use a proper wait command
-		
-		WebElement element = driver.findElement(By.xpath("(//a[@data-testid='itemDescription'])[60]"));
-		
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); //scroll the last item into view to click on it
-		
-		driver.findElement(By.xpath("(//a[@data-testid='itemDescription'])[60]")).click(); //click on the last item in the list
+		driver.manage().window().maximize(); //maximize window during runtime
 		
 		
-		Thread.sleep(4000);   //ideally should use a proper wait command
+		driver.get("http://demo.guru99.com/test/newtours/register.php"); //navigate to mercury tours site with GET command
 		
-		driver.findElement(By.id("buyButton")).click(); //click on buy button to add item to cart
+		driver.findElement(By.id("fName")).sendKeys("stainless work table"); //enter first name with sendKeys command
 		
-		Thread.sleep(4000);
+		driver.findElement(By.id("lName")).sendKeys("stainless work table"); //enter last name with sendKeys command
 		
-		driver.findElement(By.xpath("//a[@data-testid='cart-nav-link']")).click(); //click on cart to see items
+		driver.findElement(By.id("phone")).sendKeys("stainless work table"); //enter phone with sendKeys command
 		
-		Thread.sleep(4000);   //ideally should use a proper wait command
+		driver.findElement(By.id("email")).sendKeys("stainless work table"); //enter email with sendKeys command
 		
-		driver.findElement(By.cssSelector("svg.itemDelete__icon")).click(); //click to empty cart
+		driver.findElement(By.id("address")).sendKeys("stainless work table"); //enter address with sendKeys command
+		
+		driver.findElement(By.id("city")).sendKeys("stainless work table"); //enter city with sendKeys command
+		
+		driver.findElement(By.id("state")).sendKeys("stainless work table"); //enter state with sendKeys command
+		
+		driver.findElement(By.id("zip")).sendKeys("stainless work table"); //enter postal code with sendKeys command
+		
+		Select country = new Select(driver.findElement(By.id("country")));
+		country.selectByVisibleText("UNITED STATES"); //use 'Select' statement to select UNITED STATES from drop down menu on mercury tours website
+		
+		
+		driver.findElement(By.id("user")).sendKeys("stainless work table"); //enter username with sendKeys command
+		
+		driver.findElement(By.id("pswd")).sendKeys("stainless work table"); //enter password with sendKeys command
+		
+		driver.findElement(By.id("confirmPswd")).sendKeys("stainless work table"); //enter confirm password with sendKeys command
+		
+		driver.findElement(By.id("submit")).click(); //click on the 'Submit Query' button using the CLICK() command
+		
+		Thread.sleep(4000); //wait for the Next Page to load (ideally would use another wait command like 'wait for element to be visible')
+		
+		driver.findElement(By.id("singIn")).click(); //click on the 'Sign In' button using the CLICK() command
+		
+		Thread.sleep(4000); //wait for the Next Page to load (ideally would use another wait command like 'wait for element to be visible')
+		
+		driver.findElement(By.id("user")).sendKeys("stainless work table"); //enter username with sendKeys command
+		
+		driver.findElement(By.id("pswd")).sendKeys("stainless work table"); //enter password with sendKeys command
+		
+		driver.findElement(By.id("submit")).click(); //click on the 'Submit' button using the CLICK() command
+		
+		Thread.sleep(4000); //wait for the Next Page to load (ideally would use another wait command like 'wait for element to be visible')
+		
+		String storeLoginMessage = driver.findElement(By.id("submit")).getText(); //store the text 'successful login'
+		
+		storeLoginMessage.equalsIgnoreCase("successful login"); //make sure that the message 'successful login' is displayed after logging in  - aka - EXPECTED RESULT
+		
 		
 		
 	}
