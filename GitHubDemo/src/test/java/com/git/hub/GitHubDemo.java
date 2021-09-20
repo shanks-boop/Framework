@@ -29,31 +29,31 @@ public class GitHubDemo {
 		
 		driver.get("http://demo.guru99.com/test/newtours/register.php"); //navigate to mercury tours site with GET command
 		
-		driver.findElement(By.id("fName")).sendKeys("stainless work table"); //enter first name with sendKeys command
+		driver.findElement(By.id("fName")).sendKeys("Ron"); //enter first name with sendKeys command
 		
-		driver.findElement(By.id("lName")).sendKeys("stainless work table"); //enter last name with sendKeys command
+		driver.findElement(By.id("lName")).sendKeys("Silvers"); //enter last name with sendKeys command
 		
-		driver.findElement(By.id("phone")).sendKeys("stainless work table"); //enter phone with sendKeys command
+		driver.findElement(By.id("phone")).sendKeys("678-909-5969"); //enter phone with sendKeys command
 		
-		driver.findElement(By.id("email")).sendKeys("stainless work table"); //enter email with sendKeys command
+		driver.findElement(By.id("email")).sendKeys("rsilvers@gmail.com"); //enter email with sendKeys command
 		
-		driver.findElement(By.id("address")).sendKeys("stainless work table"); //enter address with sendKeys command
+		driver.findElement(By.id("address")).sendKeys("99 Fake St"); //enter address with sendKeys command
 		
-		driver.findElement(By.id("city")).sendKeys("stainless work table"); //enter city with sendKeys command
+		driver.findElement(By.id("city")).sendKeys("Atlanta"); //enter city with sendKeys command
 		
-		driver.findElement(By.id("state")).sendKeys("stainless work table"); //enter state with sendKeys command
+		driver.findElement(By.id("state")).sendKeys("GA"); //enter state with sendKeys command
 		
-		driver.findElement(By.id("zip")).sendKeys("stainless work table"); //enter postal code with sendKeys command
+		driver.findElement(By.id("zip")).sendKeys("30350"); //enter postal code with sendKeys command
 		
 		Select country = new Select(driver.findElement(By.id("country")));
 		country.selectByVisibleText("UNITED STATES"); //use 'Select' statement to select UNITED STATES from drop down menu on mercury tours website
 		
 		
-		driver.findElement(By.id("user")).sendKeys("stainless work table"); //enter username with sendKeys command
+		driver.findElement(By.id("user")).sendKeys("defLeppard1"); //enter username with sendKeys command
 		
-		driver.findElement(By.id("pswd")).sendKeys("stainless work table"); //enter password with sendKeys command
+		driver.findElement(By.id("pswd")).sendKeys("inveniemProject"); //enter password with sendKeys command
 		
-		driver.findElement(By.id("confirmPswd")).sendKeys("stainless work table"); //enter confirm password with sendKeys command
+		driver.findElement(By.id("confirmPswd")).sendKeys("inveniemProject"); //enter confirm password with sendKeys command
 		
 		driver.findElement(By.id("submit")).click(); //click on the 'Submit Query' button using the CLICK() command
 		
@@ -63,9 +63,9 @@ public class GitHubDemo {
 		
 		Thread.sleep(4000); //wait for the Next Page to load (ideally would use another wait command like 'wait for element to be visible')
 		
-		driver.findElement(By.id("user")).sendKeys("stainless work table"); //enter username with sendKeys command
+		driver.findElement(By.id("user")).sendKeys("defLeppard1"); //enter username with sendKeys command
 		
-		driver.findElement(By.id("pswd")).sendKeys("stainless work table"); //enter password with sendKeys command
+		driver.findElement(By.id("pswd")).sendKeys("inveniemProjec’"); //enter password with sendKeys command
 		
 		driver.findElement(By.id("submit")).click(); //click on the 'Submit' button using the CLICK() command
 		
